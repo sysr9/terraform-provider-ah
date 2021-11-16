@@ -33,6 +33,10 @@ func dataSourceAHPrivateNetworks() *schema.Resource {
 							Type:     schema.TypeString,
 							Computed: true,
 						},
+						"number": {
+							Type:     schema.TypeString,
+							Computed: true,
+						},
 						"state": {
 							Type:     schema.TypeString,
 							Computed: true,
@@ -149,6 +153,7 @@ func dataSourceAHPrivateNetworksSchema(d *schema.ResourceData, meta interface{},
 			"ip_range":   privateNetwork.CIDR,
 			"name":       privateNetwork.Name,
 			"state":      privateNetwork.State,
+			"number":	  privateNetwork.Number,
 			"created_at": privateNetwork.CreatedAt,
 		}
 		privateNetworkInfo, err := client.PrivateNetworks.Get(context.Background(), privateNetwork.ID)

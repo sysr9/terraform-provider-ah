@@ -53,6 +53,7 @@ func TestAccDataSourceAHPrivateNetworks_Basic(t *testing.T) {
 					resource.TestCheckResourceAttrPair("data.ah_private_networks.test", "private_networks.0.id", "ah_private_network.test", "id"),
 					resource.TestCheckResourceAttrSet("data.ah_private_networks.test", "private_networks.0.ip_range"),
 					resource.TestCheckResourceAttrSet("data.ah_private_networks.test", "private_networks.0.name"),
+					resource.TestCheckResourceAttrSet("data.ah_private_networks.test", "private_networks.0.number"),
 					resource.TestCheckResourceAttrSet("data.ah_private_networks.test", "private_networks.0.state"),
 					resource.TestCheckResourceAttrSet("data.ah_private_networks.test", "private_networks.0.created_at"),
 					resource.TestCheckResourceAttr("data.ah_private_networks.test", "private_networks.0.cloud_servers.#", "1"),
